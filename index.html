@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<title>PD1 Practice</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <h1>PD1 Practice</h1>
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="study">Study</button>
+      <button class="tab-btn" data-tab="quiz">Quiz</button>
+    </nav>
+  </header>
+
+  <main id="study-tab" class="tab-panel active">
+    <div class="study-controls">
+      <input type="text" id="search-input" placeholder="Search questions...">
+      <select id="exam-filter">
+        <option value="">All exams</option>
+      </select>
+      <label class="review-toggle">
+        <input type="checkbox" id="study-review-only">
+        <span>&#9733; Marked only (<span id="study-marked-count">0</span>)</span>
+      </label>
+      <span id="study-count" class="count-badge"></span>
+    </div>
+    <div id="study-list" class="study-list"></div>
+  </main>
+
+  <main id="quiz-tab" class="tab-panel">
+    <div class="quiz-controls">
+      <button id="quiz-shuffle" class="btn-secondary">Shuffle</button>
+      <button id="quiz-reset" class="btn-secondary">Reset</button>
+      <select id="quiz-exam-filter">
+        <option value="">All exams</option>
+      </select>
+      <label class="review-toggle">
+        <input type="checkbox" id="quiz-review-only">
+        <span>&#9733; Marked only (<span id="quiz-marked-count">0</span>)</span>
+      </label>
+      <div class="quiz-score">Score: <span id="score-correct">0</span>/<span id="score-total">0</span></div>
+    </div>
+    <div class="quiz-progress">
+      <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+      <div id="progress-text" class="progress-text"></div>
+    </div>
+    <div id="quiz-card" class="quiz-card"></div>
+    <div class="quiz-nav">
+      <button id="quiz-prev" class="btn-secondary">&larr; Prev</button>
+      <button id="quiz-submit" class="btn-primary">Submit</button>
+      <button id="quiz-next" class="btn-secondary">Next &rarr;</button>
+    </div>
+  </main>
+</div>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
